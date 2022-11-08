@@ -740,17 +740,12 @@ img {
 	padding: 6px 22px;
 }
 
-.button-port-a {
-	padding: 6px 25px;
-}
-
 .button-list {
 	margin-bottom: 50px;
 	justify-content: center;
 }
 
-.button-port,
-.button-port-a {
+.button-port {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.625;
@@ -766,9 +761,7 @@ img {
 }
 
 .button-port:hover,
-.button-port-a:hover,
-.button-port:focus,
-.botton-port-a:focus {
+.botton-port:focus {
 	color: #ffffff;
 	background-color: var(--hover-focus-logo-color);
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -786,8 +779,7 @@ img {
 	flex-basis: calc(100% / 3 - 30px);
 	margin-left: 30px;
 	margin-top: 30px;
-	border: 1px solid #eeeeee;
-	box-shadow: none;
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .web-list > .item:hover {
@@ -799,12 +791,55 @@ img {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.web-list > .item:hover .card-foto::before {
+	transform: translateY(0);
+}
+
+.web-list > .item:hover .text-fond {
+	transform: translateY(0);
+}
+
 .border {
 	display: block;
 	padding: 20px 24px;
 	border-right: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
 	border-left: 1px solid #eeeeee;
+}
+
+.card {
+	text-decoration: none;
+	border: none;
+}
+
+.card-foto {
+	position: relative;
+	overflow: hidden;
+}
+
+.card-foto::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 370px;
+	height: 294px;
+	background-color: rgba(33, 150, 243, 0.9);
+	transform: translateY(100%);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-fond {
+	display: inline-block;
+	padding: 63px 24px;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 18px;
+	line-height: 1.56;
+	color: #ffffff;
+	transform: translateY(100%);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-h3p {
@@ -817,10 +852,10 @@ img {
 }
 
 .work-examples {
+	margin: 0;
 	display: block;
 	font-size: 16px;
 	line-height: 1.875;
 	letter-spacing: 0.03em;
 	color: #757575;
-	text-decoration: none;
 }
